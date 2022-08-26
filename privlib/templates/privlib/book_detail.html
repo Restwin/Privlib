@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Заголовок: {{ book.title }}</h1>
+
+<p><strong>Автор:</strong> <a href="{{ book.author.get_absolute_url }}">{{ book.author }}</a></p>
+<p><strong>Описание:</strong> {{ book.summary }}</p>
+<p><strong>ISBN:</strong> {{ book.isbn }}</p> 
+<p><strong>Язык:</strong> {{ book.language }}</p>  
+<p><strong>Жанр:</strong> {{ book.genre.all|join:", " }}</p>
+
+{% endblock %}
+
